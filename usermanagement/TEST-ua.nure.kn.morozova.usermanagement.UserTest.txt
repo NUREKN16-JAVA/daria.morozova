@@ -1,0 +1,10 @@
+Testsuite: ua.nure.kn.morozova.usermanagement.UserTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0,006 sec
+
+Testcase: testGetFullName took 0,002 sec
+Testcase: testGetAgeWithDayBirthdayYesterday took 0 sec
+Testcase: testGetAgeWithBirthdayTomorrow took 0 sec
+Testcase: testGetAgeWithTwentyYearsOld took 0,001 sec
+Testcase: testGetAgeWhenYearsAreDifferent took 0 sec
+Testcase: testGetAgeNotNullAge took 0 sec
+Testcase: testGetAgeWithCurrentTime took 0 sec
