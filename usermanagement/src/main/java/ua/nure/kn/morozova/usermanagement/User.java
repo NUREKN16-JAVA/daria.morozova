@@ -6,9 +6,6 @@ import java.util.Date;
 
 public class User implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -7789603340108400175L;
 	private Long id;
 	private String firstName;
