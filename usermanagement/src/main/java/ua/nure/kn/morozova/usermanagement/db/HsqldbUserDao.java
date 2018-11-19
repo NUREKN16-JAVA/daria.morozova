@@ -1,8 +1,10 @@
 package ua.nure.kn.morozova.usermanagement.db;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Collection;
 
@@ -19,7 +21,6 @@ public class HsqldbUserDao implements UserDao {
 	}
 	
 	
-	
 	@Override
 	public User create(User user) throws DatabaseException {
 		try {
@@ -34,7 +35,21 @@ public class HsqldbUserDao implements UserDao {
 			if(n!=1) {
 				throw new DatabaseException("Number of the inserted rows: " + n);
 			}
-			return user;
+		
+			
+			CallableStatement callableStatement = connetion.prepareCall("call IDENTITY()"); //Creates a CallableStatement object for calling database stored procedures.
+			ResultSet keys = callableStatement.executeQuery(); //The ResultSet interface provides getter methods(getLong)for retrieving column values from the current row
+			
+			if(keys.next()) {
+				user.setId(new Long(keys.getLong(1)));
+			}
+			
+			keys.close();
+			callableStatement.close();
+			statement.close();
+			connetion.close();
+			
+			return user; 
 			
 		} catch (DatabaseException e) {
 			throw e;
@@ -44,6 +59,10 @@ public class HsqldbUserDao implements UserDao {
 		}
 		
 	}
+	
+
+	
+	
 
 	@Override
 	public void update(User user) throws DatabaseException {
