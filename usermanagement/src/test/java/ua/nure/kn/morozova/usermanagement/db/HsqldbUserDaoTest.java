@@ -19,7 +19,7 @@ public class HsqldbUserDaoTest extends TestCase {
 	protected void setUp() throws Exception {
 		super.setUp();
 		connectionFactory = new ConnectionFactoryImpl();
-		dao = new HsqldbUserDao(connectionFactory);			//???
+		dao = new HsqldbUserDao(connectionFactory);			
 	}
 
 
@@ -38,11 +38,13 @@ public class HsqldbUserDaoTest extends TestCase {
 			
 			assertNotNull(user);
 			assertNotNull(user.getId());
+		
 		} catch (DatabaseException e) {
 			e.printStackTrace();
 			fail(e.toString());
 		}
 		
 	}
+	
 
 }

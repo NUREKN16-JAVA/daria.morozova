@@ -23,10 +23,13 @@ public class HsqldbUserDao implements UserDao {
 	
 	@Override
 	public User create(User user) throws DatabaseException {
+		
+		Connection connetion = null;
+		PreparedStatement statement = null;
 		try {
-			Connection connetion = connectionFactory.createConnection();
+			connetion = connectionFactory.createConnection();
 			String sql = "INSERT INTO users (firstname, lastname, dateofbirth) VALUES (?, ?, ?)";
-			PreparedStatement statement = connetion.prepareStatement(sql);
+			statement = connetion.prepareStatement(sql);
 			statement.setString(1, user.getFirstName());
 			statement.setString(2, user.getLastName());
 			statement.setDate(3, new Date(user.getDateOfBirth().getTime()));
@@ -40,15 +43,10 @@ public class HsqldbUserDao implements UserDao {
 			CallableStatement callableStatement = connetion.prepareCall("call IDENTITY()"); //Creates a CallableStatement object for calling database stored procedures.
 			ResultSet keys = callableStatement.executeQuery(); //The ResultSet interface provides getter methods(getLong)for retrieving column values from the current row
 			
-			if(keys.next()) {
-				user.setId(new Long(keys.getLong(1)));
+			while(keys.next()) {									//.
+				user.setId(keys.getLong(1));
 			}
-			
-			keys.close();
-			callableStatement.close();
-			statement.close();
-			connetion.close();
-			
+					
 			return user; 
 			
 		} catch (DatabaseException e) {
@@ -56,6 +54,18 @@ public class HsqldbUserDao implements UserDao {
 			
 		} catch (SQLException e) {
 			throw new DatabaseException();
+		} finally {
+			
+			try {
+				statement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				connetion.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		
 	}
