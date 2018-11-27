@@ -4,5 +4,5 @@ import java.sql.Connection;
 
 public interface ConnectionFactory {
 
-	Connection createConnection() throws DatabaseException;
+	Connection createConnection() throws DatabaseException; //для возможности подключения к БД
 }

@@ -10,28 +10,32 @@ public class ConnectionFactoryImpl implements ConnectionFactory {
 
 	@Override
 	public Connection createConnection() throws DatabaseException {
-		String driver="org.hsqldb.jdbcDriver";
-		String url="jdbc:hsqldb:file:db/usermanagement"; //адрес, где находится база
-		String user="sa"; 
-		String password="";
-		
 
-		//проверка наличия драйвера
 		try {
-			Class.forName(driver);						//динамическая загрузка класса драйвера в память
+			Class.forName(driver);				//Регистрируем драйвер
 		} catch (ClassNotFoundException e) {
 			throw new RuntimeException(e);
-		} 
-		
-		
-		//созд-е соединения с БД
+		}
+
+		// creation of db connection
 		try {
 			return DriverManager.getConnection(url, user, password);
 		} catch (SQLException e) {
 			throw new DatabaseException(e);
 		}
-		
-	}
-	
-}
 
+	}
+
+	private String user;
+	private String password;
+	private String url;
+	private String driver;
+
+	public ConnectionFactoryImpl(String user, String password, String url, String driver) {
+		this.user = user;
+		this.password = password;
+		this.url = url;
+		this.driver = driver;
+
+	}
+}

@@ -8,7 +8,7 @@ import javax.management.RuntimeErrorException;
 
 public class DaoFactory {
 
-	private static final String USER_DAO = "dao.nure.ctde.usermanagement.db.UserDao";
+	private static final String USER_DAO = "ua.nure.kn.morozova.usermanagement.db.UserDao";
 	private final Properties properties;
 	
 	// INSTANCE будет хранить в себе экземпляр фабрики
