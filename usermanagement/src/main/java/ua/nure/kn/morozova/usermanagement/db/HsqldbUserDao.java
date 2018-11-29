@@ -38,7 +38,7 @@ class HsqldbUserDao implements UserDao {
 
 	@Override
 	public User create(User user) throws DatabaseException {
-		Connection connetion = connectionFactory.createConnection(); // don't use NULL
+		Connection connetion = connectionFactory.createConnection(); 
 		try {
 			PreparedStatement statement = connetion.prepareStatement(INSERT_QUERY);
 			statement.setString(1, user.getFirstName());
@@ -50,11 +50,8 @@ class HsqldbUserDao implements UserDao {
 				throw new DatabaseException("Number of the inserted rows: " + n);
 			}
 
-			CallableStatement callableStatement = connetion.prepareCall("call IDENTITY()"); // возвращ последний
-																							// сгенерированный id
-			ResultSet keys = callableStatement.executeQuery(); // The ResultSet interface provides getter
-																// methods(getLong)for retrieving column values from the
-																// current row
+			CallableStatement callableStatement = connetion.prepareCall("call IDENTITY()"); 																					
+			ResultSet keys = callableStatement.executeQuery(); 
 
 			while (keys.next()) {
 				user.setId(new Long(keys.getLong(1)));
@@ -115,6 +112,7 @@ class HsqldbUserDao implements UserDao {
 
 		} catch (DatabaseException e) {
 			throw e;
+		
 		} catch (SQLException e) {
 
 			throw new DatabaseException(e);

@@ -11,7 +11,7 @@ public class DaoFactory {
 	private static final String USER_DAO = "ua.nure.kn.morozova.usermanagement.db.UserDao";
 	private final Properties properties;
 	
-	// INSTANCE будет хранить в себе экземпляр фабрики
+
     private final static DaoFactory INSTANCE = new DaoFactory();
     
     public static DaoFactory getInstance() {

@@ -12,7 +12,7 @@ public class ConnectionFactoryImpl implements ConnectionFactory {
 	public Connection createConnection() throws DatabaseException {
 
 		try {
-			Class.forName(driver);				//Регистрируем драйвер
+			Class.forName(driver);				
 		} catch (ClassNotFoundException e) {
 			throw new RuntimeException(e);
 		}
