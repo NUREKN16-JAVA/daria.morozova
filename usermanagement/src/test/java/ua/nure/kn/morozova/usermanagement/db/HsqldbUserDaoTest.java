@@ -135,7 +135,6 @@ public class HsqldbUserDaoTest extends DatabaseTestCase {
 		return new DatabaseConnection(connectionFactory.createConnection());
 	}
 
-	// читаем данные из файла
 	@Override
 	protected IDataSet getDataSet() throws Exception {
 		IDataSet dataSet = new XmlDataSet(getClass().getClassLoader().getResourceAsStream("usersDataSet.xml"));
