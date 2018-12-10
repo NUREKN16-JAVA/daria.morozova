@@ -22,6 +22,7 @@ public class HsqldbUserDaoTest extends DatabaseTestCase {
 
 	private static final String FIRST_NAME_ETALON = "Dasha";
 	private static final String LAST_NAME_ETALON = "Morozova";
+	private static final Long ID_ETALON = 1000L;
 	private UserDao dao;
 	private ConnectionFactory connectionFactory;
 
@@ -56,28 +57,38 @@ public class HsqldbUserDaoTest extends DatabaseTestCase {
 	}
 
 	@Test
-	public void testUpdateAndFind() {
+	public void testFind() {
 		try {
-
 			User user = new User();
 			user.setFirstName(FIRST_NAME_ETALON);
 			user.setLastName(LAST_NAME_ETALON);
 			user.setDateOfBirth(new Date());
+			user.setId(ID_ETALON);
 
-			user = dao.create(user);
-			User userFromDB = dao.find(user.getId());
-			assertNotNull(userFromDB);
-			assertEquals(FIRST_NAME_ETALON, userFromDB.getFirstName());
+			assertEquals(user, dao.find(user.getId()));
+		} catch (DatabaseException e) {
+			e.printStackTrace();
+			fail(e.toString());
+		}
+
+	}
+
+	@Test
+	public void testUpdate() {
+		try {
 
 			User updatedUser = new User();
 			updatedUser.setFirstName("updatedFirstName");
 			updatedUser.setLastName("updatedLastName");
 			updatedUser.setDateOfBirth(new Date());
-			updatedUser.setId(user.getId());
+			updatedUser.setId(ID_ETALON);
+
 			dao.update(updatedUser);
-			User updatedUserFromDB = dao.find(user.getId());
+
+			User updatedUserFromDB = dao.find(ID_ETALON);
 			assertNotNull(updatedUserFromDB);
 			assertEquals("updatedFirstName", updatedUserFromDB.getFirstName());
+			assertEquals("updatedLastName", updatedUserFromDB.getLastName());
 
 		} catch (DatabaseException e) {
 

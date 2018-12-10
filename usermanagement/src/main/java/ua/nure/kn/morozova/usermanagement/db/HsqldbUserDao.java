@@ -87,6 +87,9 @@ class HsqldbUserDao implements UserDao {
 			if (n != 1) {
 				throw new DatabaseException("Number of the updated rows: " + n);
 			}
+			
+			statement.close();
+			connetion.close();
 
 		} catch (SQLException e) {
 			throw new DatabaseException();
@@ -108,7 +111,9 @@ class HsqldbUserDao implements UserDao {
 			if (n != 1) {
 				throw new DatabaseException("Number of the deleted rows: " + n);
 			}
-
+			
+			statement.close();
+			connection.close();
 
 		} catch (DatabaseException e) {
 			throw e;
@@ -139,6 +144,9 @@ class HsqldbUserDao implements UserDao {
 				user.setDateOfBirth(resultSet.getDate(4));
 
 			}
+			resultSet.close();
+			statement.close();
+			connection.close();
 			return user;
 
 		} catch (DatabaseException e) {
@@ -167,6 +175,9 @@ class HsqldbUserDao implements UserDao {
 
 				result.add(user);
 			}
+			resultSet.close();
+			statement.close();
+			connection.close();
 
 		} catch (DatabaseException e) {
 			throw e;

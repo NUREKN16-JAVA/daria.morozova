@@ -2,62 +2,52 @@ package ua.nure.kn.morozova.usermanagement.db;
 
 import java.io.IOException;
 import java.util.Properties;
-import java.util.Set;
+import java.sql.Connection;
 
-import javax.management.RuntimeErrorException;
 
-public class DaoFactory {
+public abstract class DaoFactory {
 
-	private static final String USER_DAO = "ua.nure.kn.morozova.usermanagement.db.UserDao";
-	private final Properties properties;
+	protected static final String USER_DAO = "ua.nure.kn.morozova.usermanagement.db.UserDao";
+	protected static Properties properties;
 	
-
-    private final static DaoFactory INSTANCE = new DaoFactory();
-    
-    public static DaoFactory getInstance() {
-        return INSTANCE;
-    }
+	private static final String DAO_FACTORY = "dao.factory";
+    private static DaoFactory instance; 
     
     
-	public DaoFactory() {
+    static{
 		properties = new Properties();
 		try {
-			properties.load(getClass().getClassLoader().getResourceAsStream("settings.properties"));
-		} catch (IOException e) {
+			properties.load(DaoFactory.class.getClassLoader()
+					.getResourceAsStream("settings.properties"));
+	} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
 	}
-
-	private ConnectionFactory getConnection() {
-		String user = properties.getProperty("connection.user");
-		String password = properties.getProperty("connection.password");
-		String url = properties.getProperty("connection.url");
-		String driver = properties.getProperty("connection.driver");
-		
-		return new ConnectionFactoryImpl(user, password, url, driver); 
-	}
-
-	public UserDao getUserDao() {
-		UserDao result = null;
-		
-	
+	public static synchronized DaoFactory getInstance() {
+		if (instance == null) {
+			Class factoryClass;
 			try {
-			Class myclass = myclass = Class.forName(properties.getProperty(USER_DAO));
-				result = (UserDao) myclass.newInstance();
-				result.setConnectionFactory(getConnectionFactory());
-			} catch (ClassNotFoundException e) {
+				factoryClass = Class.forName(properties
+						.getProperty(DAO_FACTORY));
+				instance = (DaoFactory)factoryClass.newInstance();
+			} catch (Exception e) {
 				throw new RuntimeException(e);
-			} catch (InstantiationException e) {
-				e.printStackTrace();
-			} catch (IllegalAccessException e) {
-				e.printStackTrace();
 			}
-		
-		return result;											
+		}
+		return instance;
 	}
 
-	private ConnectionFactory getConnectionFactory() {
-		return new ConnectionFactoryImpl("sa", "", "jdbc:hsqldb:file:db/usermanagement", "org.hsqldb.jdbcDriver");
+	protected DaoFactory() {
 	}
 
+	public static void init(Properties prop) {
+		properties = prop;
+		instance = null;
+	}
+
+	protected ConnectionFactory getConnectionFactory() {
+		return new ConnectionFactoryImpl(properties);
+	}
+
+	public abstract UserDao getUserDao();
 }
