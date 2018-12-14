@@ -30,11 +30,5 @@ public class BrowseServletTest extends MockServletTestCase {
         assertSame(list, collection);
     }
     
-    
-    
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
 
 }
