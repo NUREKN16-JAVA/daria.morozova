@@ -4,6 +4,7 @@ import java.util.Properties;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.mockobjects.dynamic.Mock;
@@ -39,9 +40,6 @@ public abstract class MockServletTestCase extends BasicServletTestCaseAdapter {
 		mockUserDao.verify();
 	}
 
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
+
 
 }

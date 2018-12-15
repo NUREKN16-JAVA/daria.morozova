@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6abf316a-56c6-4b6a-884c-f2c60200ec1a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/nure/kn/morozova/usermanagement/gui/BrowsePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/nure/kn/morozova/usermanagement/gui/BrowsePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/usermanagement.lck" beforeDir="false" afterPath="$PROJECT_DIR$/db/usermanagement.lck" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/usermanagement.properties" beforeDir="false" afterPath="$PROJECT_DIR$/db/usermanagement.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/browse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/browse.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ua/nure/kn/morozova/usermanagement/db/HsqldbUserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ua/nure/kn/morozova/usermanagement/db/HsqldbUserDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ua/nure/kn/morozova/usermanagement/web/BrowseServletTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ua/nure/kn/morozova/usermanagement/web/BrowseServletTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ua/nure/kn/morozova/usermanagement/web/MockServletTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ua/nure/kn/morozova/usermanagement/web/MockServletTestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/usermanagement.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/bin/" />
@@ -16,19 +23,22 @@
     <session id="142502615">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="10" />
+          <entry key="java" value="14" />
+          <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="10" />
+          <entry key="JAVA" value="14" />
+          <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -44,8 +54,8 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ua/nure/kn/morozova/usermanagement/db/HsqldbUserDao.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="162">
@@ -55,10 +65,64 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/nure/kn/morozova/usermanagement/web/BrowseServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ua/nure/kn/morozova/usermanagement/db/MockDaoFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ua/nure/kn/morozova/usermanagement/web/BrowseServletTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ua/nure/kn/morozova/usermanagement/web/MockServletTestCase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="39" column="29" selection-end-line="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/ua/nure/kn/morozova/usermanagement/db/HsqldbUserDaoTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -94,6 +158,9 @@
         <option value="$PROJECT_DIR$/src/main/java/ua/nure/kn/morozova/usermanagement/db/HsqldbUserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/nure/kn/morozova/usermanagement/gui/BrowsePanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/nure/kn/morozova/usermanagement/gui/EditPanel.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ua/nure/kn/morozova/usermanagement/web/MockServletTestCase.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ua/nure/kn/morozova/usermanagement/web/BrowseServletTest.java" />
+        <option value="$PROJECT_DIR$/build.xml" />
       </list>
     </option>
   </component>
@@ -115,8 +182,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -138,20 +203,20 @@
               <item name="usermanagement" type="b2602c69:ProjectViewProjectNode" />
               <item name="usermanagement" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="usermanagement" type="b2602c69:ProjectViewProjectNode" />
               <item name="usermanagement" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="usermanagement" type="b2602c69:ProjectViewProjectNode" />
               <item name="usermanagement" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="usermanagement" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -159,7 +224,7 @@
               <item name="usermanagement" type="b2602c69:ProjectViewProjectNode" />
               <item name="usermanagement" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="usermanagement" type="462c0819:PsiDirectoryNode" />
               <item name="db" type="462c0819:PsiDirectoryNode" />
@@ -168,7 +233,7 @@
               <item name="usermanagement" type="b2602c69:ProjectViewProjectNode" />
               <item name="usermanagement" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="usermanagement" type="462c0819:PsiDirectoryNode" />
               <item name="gui" type="462c0819:PsiDirectoryNode" />
@@ -177,56 +242,35 @@
               <item name="usermanagement" type="b2602c69:ProjectViewProjectNode" />
               <item name="usermanagement" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="usermanagement" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="usermanagement" type="b2602c69:ProjectViewProjectNode" />
               <item name="usermanagement" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="usermanagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="usermanagement" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="usermanagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="usermanagement" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="usermanagement" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="usermanagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="usermanagement" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="usermanagement" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544834812890" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/slf4j-simple-1.7.25.jar!/" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544860627942" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/build.xml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -247,30 +291,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MainFrame">
-    <configuration name="MainFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ua.nure.kn.morozova.usermanagement.gui.MainFrame" />
+  <component name="RunManager" selected="JUnit.BrowseServletTest">
+    <configuration name="BrowseServletTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="usermanagement" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ua.nure.kn.morozova.usermanagement.gui.*" />
+          <option name="PATTERN" value="ua.nure.kn.morozova.usermanagement.web.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ConnectionFactoryImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="usermanagement" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ua.nure.kn.morozova.usermanagement.db.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ua.nure.kn.morozova.usermanagement.db" />
-      <option name="MAIN_CLASS_NAME" value="ua.nure.kn.morozova.usermanagement.db.ConnectionFactoryImplTest" />
+      <option name="PACKAGE_NAME" value="ua.nure.kn.morozova.usermanagement.web" />
+      <option name="MAIN_CLASS_NAME" value="ua.nure.kn.morozova.usermanagement.web.BrowseServletTest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -303,18 +334,48 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MainFrameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="usermanagement" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ua.nure.kn.morozova.usermanagement.gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ua.nure.kn.morozova.usermanagement.gui" />
+      <option name="MAIN_CLASS_NAME" value="ua.nure.kn.morozova.usermanagement.gui.MainFrameTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="usermanagement" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ua.nure.kn.morozova.usermanagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ua.nure.kn.morozova.usermanagement" />
+      <option name="MAIN_CLASS_NAME" value="ua.nure.kn.morozova.usermanagement.UserTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.MainFrame" />
       <item itemvalue="JUnit.HsqldbUserDaoTest" />
       <item itemvalue="JUnit.DaoFactoryTest" />
-      <item itemvalue="JUnit.ConnectionFactoryImplTest" />
+      <item itemvalue="JUnit.MainFrameTest" />
+      <item itemvalue="JUnit.UserTest" />
+      <item itemvalue="JUnit.BrowseServletTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainFrame" />
-        <item itemvalue="JUnit.ConnectionFactoryImplTest" />
-        <item itemvalue="JUnit.DaoFactoryTest" />
+        <item itemvalue="JUnit.BrowseServletTest" />
+        <item itemvalue="JUnit.UserTest" />
+        <item itemvalue="JUnit.MainFrameTest" />
         <item itemvalue="JUnit.HsqldbUserDaoTest" />
+        <item itemvalue="JUnit.DaoFactoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -329,6 +390,7 @@
       <option name="presentableId" value="Default" />
       <updated>1544831264557</updated>
       <workItem from="1544831272152" duration="3056000" />
+      <workItem from="1544856080097" duration="1763000" />
     </task>
     <servers />
   </component>
@@ -342,41 +404,59 @@
     <history-entry file="ConnectionFactoryImplTest - 2018.12.14 at 12h 59m 04s.xml">
       <configuration name="ConnectionFactoryImplTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ConnectionFactoryImplTest - 2018.12.14 at 19h 48m 43s.xml">
+      <configuration name="ConnectionFactoryImplTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DaoFactoryTest - 2018.12.14 at 19h 49m 09s.xml">
+      <configuration name="DaoFactoryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HsqldbUserDaoTest - 2018.12.14 at 19h 49m 15s.xml">
+      <configuration name="HsqldbUserDaoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainFrameTest - 2018.12.14 at 19h 49m 43s.xml">
+      <configuration name="MainFrameTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserTest - 2018.12.14 at 19h 49m 49s.xml">
+      <configuration name="UserTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BrowseServletTest - 2018.12.14 at 19h 55m 25s.xml">
+      <configuration name="BrowseServletTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3056000" />
+    <option name="totallyTimeSpent" value="4819000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25263157" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19919029" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" weight="0.32924694" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32924694" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.18388791" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.44658494" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.39229423" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" visible="true" weight="0.15465587" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,28 +465,14 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+    <buildFile url="file://$PROJECT_DIR$/build.xml">
+      <expanded value="true" />
+    </buildFile>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/ua/nure/kn/morozova/usermanagement/db/HsqldbUserDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ua/nure/kn/morozova/usermanagement/db/DaoFactoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ua/nure/kn/morozova/usermanagement/db/ConnectionFactoryImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ua/nure/kn/morozova/usermanagement/gui/UserTableModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -432,12 +498,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
           <caret line="82" column="35" lean-forward="true" selection-start-line="82" selection-start-column="35" selection-end-line="82" selection-end-column="35" />
-          <folding>
-            <element signature="e#1801#1802#0" expanded="true" />
-            <element signature="e#1835#1836#0" expanded="true" />
-            <element signature="e#2180#2181#0" expanded="true" />
-            <element signature="e#2201#2202#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -452,6 +512,71 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="82" selection-start-line="82" selection-end-line="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ua/nure/kn/morozova/usermanagement/db/HsqldbUserDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ua/nure/kn/morozova/usermanagement/db/DaoFactoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ua/nure/kn/morozova/usermanagement/db/ConnectionFactoryImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/nure/kn/morozova/usermanagement/web/BrowseServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ua/nure/kn/morozova/usermanagement/db/MockDaoFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ua/nure/kn/morozova/usermanagement/web/MockServletTestCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="39" column="29" selection-end-line="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ua/nure/kn/morozova/usermanagement/web/BrowseServletTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -520,7 +645,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>slf4j-simple-1.7.25</last-edited>
+          <last-edited>xml-apis</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

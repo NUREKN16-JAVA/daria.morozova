@@ -1,4 +1,5 @@
-<html>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ <html>
 <head><title>User management/Browse</title></head>
 <body>
     <table id="userTable" border="1">
@@ -8,12 +9,14 @@
 		<th>Last name</th>
 		<th>Date of birth</th>
 	</tr>
+	 <c:forEach var="user" items="${sessionScope.users}">
     	<tr>
-    		<td><input type="radio" name="id" id="id" value=""></td>
-		<td>Dasha</td>
-		<td>Morozova</td>
-		<td>21/03/1998</td>
+    		<td><input type="radio" name="id" id="id" value="${user.id}"></td>
+		<td>${user.firstName}</td>
+		<td>${user.lastName}</td>
+		<td>${user.dateOfBirth}</td>
 	</tr>
+	</c:forEach>
     </table>
 </body>
 </html>

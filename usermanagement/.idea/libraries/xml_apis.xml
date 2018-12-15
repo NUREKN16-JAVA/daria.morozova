@@ -1,0 +1,34 @@
+<component name="libraryTable">
+  <library name="xml-apis">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/xml-apis.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/xercesImpl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/struts.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/standard-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-simple-1.7.25.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-api-1.7.25.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/servlet-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/regexp-1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/nekohtml.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mockrunner-servlet.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mockobjects-core-0.09.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mockejb.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/junit.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/junit-4.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jsp-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jfcunit-2.08.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jdom.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jboss-j2ee.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/hsqldb-1.8.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta-oro-2.0.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/dbunit-2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-validator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-logging.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-digester.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-beanutils.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/cglib-nodep-2.1_2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
