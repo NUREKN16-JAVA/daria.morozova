@@ -7,7 +7,7 @@ public class DaoFactoryImpl extends DaoFactory {
 	public UserDao getUserDao() {
 		UserDao result = null;
 		try {
-		Class myclass = Class.forName(properties.getProperty(USER_DAO));
+		Class<?> myclass = Class.forName(properties.getProperty(USER_DAO));
 			result = (UserDao) myclass.newInstance();
 			result.setConnectionFactory(getConnectionFactory());
 		} catch (ClassNotFoundException e) {

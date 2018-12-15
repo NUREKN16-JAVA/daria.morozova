@@ -134,7 +134,7 @@ public class AddPanel extends JPanel implements ActionListener {
 				return;
 			}
 			try {
-				parent.getDao().create(user);
+				parent.getUserDao().create(user);
 			} catch (DatabaseException e1) {
 				JOptionPane.showMessageDialog(this, e1.getMessage(), "Error", JOptionPane.ERROR_MESSAGE); //$NON-NLS-1$
 			}

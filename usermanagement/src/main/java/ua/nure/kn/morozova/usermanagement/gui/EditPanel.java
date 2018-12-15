@@ -21,7 +21,6 @@ import javax.swing.JTextField;
 
 public class EditPanel extends JPanel implements ActionListener {
 
-	private Long userId;
 	private MainFrame parentFrame;
 	private JTextField firstNameField;
 	private JTextField lastNameField;
@@ -31,7 +30,7 @@ public class EditPanel extends JPanel implements ActionListener {
 	private JButton okButton;
 	private JButton cancelButton;
 	private Long bufferedId;
-	
+
 	public EditPanel(MainFrame parent) {
 		this.parentFrame = parent;
 		initialize();
@@ -42,7 +41,7 @@ public class EditPanel extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if ("ok".equalsIgnoreCase(e.getActionCommand())) {
 			User user = new User();
-			user.setId(userId);
+			user.setId(bufferedId);
 			user.setFirstName(getFirstNameField().getText());
 			user.setLastName(getLastNameField().getText());
 			DateFormat format = DateFormat.getDateInstance();
@@ -53,7 +52,7 @@ public class EditPanel extends JPanel implements ActionListener {
 				return;
 			} 
 			try {
-				parentFrame.getDao().update(user);
+				parentFrame.getUserDao().update(user);
 			} catch (DatabaseException e1) {
 				JOptionPane.showMessageDialog(this, e1.getMessage(), "Error", JOptionPane.ERROR_MESSAGE); //$NON-NLS-1$
 			}

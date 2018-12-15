@@ -74,8 +74,8 @@ class HsqldbUserDao implements UserDao {
 	public void update(User user) throws DatabaseException {
 
 		try {
-			Connection connetion = connectionFactory.createConnection();
-			PreparedStatement statement = connetion.prepareStatement(UPDATE_QUERY);
+			Connection connection = connectionFactory.createConnection();
+			PreparedStatement statement = connection.prepareStatement(UPDATE_QUERY);
 
 			statement.setString(1, user.getFirstName());
 			statement.setString(2, user.getLastName());
@@ -89,7 +89,7 @@ class HsqldbUserDao implements UserDao {
 			}
 			
 			statement.close();
-			connetion.close();
+			connection.close();
 
 		} catch (SQLException e) {
 			throw new DatabaseException();

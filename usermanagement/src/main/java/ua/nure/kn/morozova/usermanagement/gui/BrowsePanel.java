@@ -11,11 +11,12 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
+import ua.nure.kn.morozova.usermanagement.User;
 import ua.nure.kn.morozova.usermanagement.db.DatabaseException;
 
 public class BrowsePanel extends JPanel implements ActionListener {
 
-	private MainFrame parent;
+	private MainFrame parentFrame;
 	private JScrollPane tablePanel;
 	private JTable userTable;
 	private JPanel buttonsPanel;
@@ -23,10 +24,9 @@ public class BrowsePanel extends JPanel implements ActionListener {
 	private JButton editButton;
 	private JButton deleteButton;
 	private JButton detailsButton;
-	private Long bufferedId;
 
 	public BrowsePanel(MainFrame mainFrame) {
-		parent = mainFrame;
+		parentFrame = mainFrame;
 		initialize();
 	}
 
@@ -51,7 +51,7 @@ public class BrowsePanel extends JPanel implements ActionListener {
 	private JButton getdDetailsButton() {
 		if (detailsButton == null) {
 			detailsButton = new JButton();
-			detailsButton.setText("Details"); //localize //$NON-NLS-1$
+			detailsButton.setText("Details"); // localize //$NON-NLS-1$
 			detailsButton.setName("detailsButton"); //$NON-NLS-1$
 			detailsButton.setActionCommand("details"); //$NON-NLS-1$
 			detailsButton.addActionListener(this);
@@ -62,7 +62,7 @@ public class BrowsePanel extends JPanel implements ActionListener {
 	private JButton getDeleteButton() {
 		if (deleteButton == null) {
 			deleteButton = new JButton();
-			deleteButton.setText("Delete"); //localize //$NON-NLS-1$
+			deleteButton.setText("Delete"); // localize //$NON-NLS-1$
 			deleteButton.setName("deleteButton"); //$NON-NLS-1$
 			deleteButton.setActionCommand("delete"); //$NON-NLS-1$
 			deleteButton.addActionListener(this);
@@ -73,7 +73,7 @@ public class BrowsePanel extends JPanel implements ActionListener {
 	private JButton getEditButton() {
 		if (editButton == null) {
 			editButton = new JButton();
-			editButton.setText("Edit"); //localize //$NON-NLS-1$
+			editButton.setText("Edit"); // localize //$NON-NLS-1$
 			editButton.setName("editButton"); //$NON-NLS-1$
 			editButton.setActionCommand("edit"); //$NON-NLS-1$
 			editButton.addActionListener(this);
@@ -84,7 +84,7 @@ public class BrowsePanel extends JPanel implements ActionListener {
 	private JButton getAddButton() {
 		if (addButton == null) {
 			addButton = new JButton();
-			addButton.setText("Add"); //localize //$NON-NLS-1$
+			addButton.setText("Add"); // localize //$NON-NLS-1$
 			addButton.setName("addButton"); //$NON-NLS-1$
 			addButton.setActionCommand("add"); //$NON-NLS-1$
 			addButton.addActionListener(this);
@@ -103,7 +103,7 @@ public class BrowsePanel extends JPanel implements ActionListener {
 		if (userTable == null) {
 			userTable = new JTable();
 			userTable.setName("userTable"); //$NON-NLS-1$
-	
+
 		}
 		return userTable;
 	}
@@ -111,7 +111,7 @@ public class BrowsePanel extends JPanel implements ActionListener {
 	public void initTable() {
 		UserTableModel model;
 		try {
-			model = new UserTableModel(parent.getDao().findAll());
+			model = new UserTableModel(parentFrame.getUserDao().findAll());
 		} catch (DatabaseException e) {
 			model = new UserTableModel(new ArrayList());
 			JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE); //$NON-NLS-1$
@@ -122,30 +122,36 @@ public class BrowsePanel extends JPanel implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String actionCommand = e.getActionCommand();
-		if("add".equalsIgnoreCase(actionCommand)) { //$NON-NLS-1$
+		if ("add".equalsIgnoreCase(actionCommand)) { //$NON-NLS-1$
 			this.setVisible(false);
-			parent.showAddPanel();
+			parentFrame.showAddPanel();
 		}
-		
-		if("edit".equalsIgnoreCase(actionCommand)) {	
-			if(userTable.getSelectedRow() == -1) {
+
+		if ("edit".equalsIgnoreCase(actionCommand)) {
+			if (userTable.getSelectedRow() == -1) {
 				JOptionPane.showMessageDialog(this, "Row was not selected", "Error", JOptionPane.ERROR_MESSAGE);
 			} else {
 				Long selectedUserId = (Long) userTable.getValueAt(userTable.getSelectedRow(), 0);
+
 				this.setVisible(false);
-				parent.showEditPanel(selectedUserId);
+				parentFrame.showEditPanel(selectedUserId);
 			}
 		}
-		
+
 		if ("delete".equalsIgnoreCase(actionCommand)) {
 			if (userTable.getSelectedRow() == -1) {
 				JOptionPane.showMessageDialog(this, "Row was not selected", "Error", JOptionPane.ERROR_MESSAGE);
 			} else {
+				long bufferedId = (long) userTable.getValueAt(userTable.getSelectedRow(), 0);
+				System.out.println(bufferedId);
+				System.out.println("jopa");
 				int choice = JOptionPane.showOptionDialog(null, "You really want to delete?", "Delete?",
 						JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
 				if (choice == JOptionPane.YES_OPTION) {
 					try {
-						parent.getUserDao().delete(parent.getUserDao().find(bufferedId));
+						User user = new User();
+						user.setId(bufferedId);
+						parentFrame.getUserDao().delete(user);
 					} catch (DatabaseException e1) {
 						JOptionPane.showMessageDialog(this, e1.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 					}
@@ -160,7 +166,7 @@ public class BrowsePanel extends JPanel implements ActionListener {
 			} else {
 				Long selectedUserId = (Long) userTable.getValueAt(userTable.getSelectedRow(), 0);
 				this.setVisible(false);
-				parent.showDetailsPanel(selectedUserId);
+				parentFrame.showDetailsPanel(selectedUserId);
 			}
 		}
 	}
