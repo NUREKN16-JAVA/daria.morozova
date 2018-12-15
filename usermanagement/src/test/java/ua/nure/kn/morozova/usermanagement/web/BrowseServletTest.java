@@ -22,12 +22,13 @@ public class BrowseServletTest extends MockServletTestCase {
     @Test
     public void testBrowse() {
         User user = new User(new Long(1000),"Dasha", "Morozova", new Date());
-        List list = Collections.singletonList(user);
+        List<User> list = Collections.singletonList(user);
         getMockUserDao().expectAndReturn("findAll", user);
         doGet();
-        Collection collection = (Collection) getWebMockObjectFactory().getMockSession().getAttribute("users");
+        Collection<User> collection = (Collection<User>) getWebMockObjectFactory().getMockSession().getAttribute("users");
         assertNotNull("Could not find list of users in session", collection);
         assertSame(list, collection);
+       
     }
     
 
