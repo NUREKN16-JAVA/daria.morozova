@@ -36,7 +36,7 @@ public class EditServlet extends HttpServlet {
     }
 
     private void doOk(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        User user = null;
+        User user;
         try {
             user = getUser(req);
         } catch (ValidationException e1) {
@@ -83,7 +83,7 @@ public class EditServlet extends HttpServlet {
         return user;
     }
 
-    protected void processUser(User user)throws DatabaseException  {
+    protected void processUser(User user) throws DatabaseException {
         DaoFactory.getInstance().getUserDao().update(user);
     }
 }

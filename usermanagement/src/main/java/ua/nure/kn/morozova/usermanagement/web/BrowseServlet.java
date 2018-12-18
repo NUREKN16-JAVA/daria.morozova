@@ -11,9 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 import ua.nure.kn.morozova.usermanagement.User;
 import ua.nure.kn.morozova.usermanagement.db.DaoFactory;
 import ua.nure.kn.morozova.usermanagement.db.DatabaseException;
+import ua.nure.kn.morozova.usermanagement.db.UserDao;
 
 public class BrowseServlet extends HttpServlet {
-	
+
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -32,12 +33,48 @@ public class BrowseServlet extends HttpServlet {
     }
 
     private void details(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String idStrUser = req.getParameter("id");
+
+        if (idStrUser == null || idStrUser.trim().isEmpty()) {
+            req.setAttribute("error", "You must select a user");
+            req.getRequestDispatcher("/browse.jsp").forward(req, resp);
+            return;
+        }
+
+        try {
+            User foundUser = DaoFactory.getInstance().getUserDao().find(Long.parseLong(idStrUser));
+            req.getSession(true).setAttribute("user", foundUser);
+        } catch (Exception e) {
+            req.setAttribute("error", "ERROR" + e.toString());
+            req.getRequestDispatcher("/browse.jsp").forward(req, resp);
+            return;
+        }
+        req.getRequestDispatcher("/details").forward(req, resp);
     }
+
 
     private void delete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String idStrUser = req.getParameter("id");
+
+        if (idStrUser == null || idStrUser.trim().isEmpty()) {
+            req.setAttribute("error", "You must select a user");
+            req.getRequestDispatcher("/browse.jsp").forward(req, resp);
+            return;
+        }
+
+        try {
+            UserDao userDao = DaoFactory.getInstance().getUserDao();
+            User deleteUser = userDao.find(Long.parseLong(idStrUser));
+            userDao.delete(deleteUser);
+        } catch (Exception e) {
+            req.setAttribute("error", "ERROR" + e.toString());
+            req.getRequestDispatcher("/browse.jsp").forward(req, resp);
+            return;
+        }
+        resp.sendRedirect("/browse");
     }
 
-    private void edit(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+    private void edit(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String idStr = req.getParameter("id");
         if (idStr == null || idStr.trim().length() == 0) {
             req.setAttribute("error", "You must select a user");

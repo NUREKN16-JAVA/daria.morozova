@@ -6,7 +6,6 @@ import java.util.Date;
 import java.util.List;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import ua.nure.kn.morozova.usermanagement.User;

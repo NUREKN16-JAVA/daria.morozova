@@ -54,7 +54,7 @@ public class AddServletTest extends MockServletTestCase {
         assertNotNull("Could not find error message in session scope", errorMessage);
     }
 
-        public void testAddEmptyDateIncorrect() {
+        public void testAddInvalidDate() {
             Date date = new Date();
             addRequestParameter("firstName", "Dasha");
             addRequestParameter("lastName", "Morozova");

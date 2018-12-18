@@ -1,8 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=utf-8" %>
 <html>
 <head><title>User management</title></head>
 <body>
 <form action="<%=request.getContextPath()%>/browse" method="post">
+
 	<table id="userTable" border="1">
 		<tr>
 			<th></th>
