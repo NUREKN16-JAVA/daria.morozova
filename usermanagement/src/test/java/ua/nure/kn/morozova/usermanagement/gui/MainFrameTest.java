@@ -48,7 +48,7 @@ public class MainFrameTest extends JFCTestCase {
 		mainFrame.setVisible(true);
 	}
 
-//	@After
+	@After
     protected void tearDown() throws Exception {
         try {
             mockUserDao.verify();
