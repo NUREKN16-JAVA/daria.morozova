@@ -83,7 +83,7 @@ public class BrowseServlet extends HttpServlet {
         }
         try {
             User user = (User) DaoFactory.getInstance().getUserDao().find(new Long(idStr));
-            req.getSession().setAttribute("user", user);
+            req.getSession(true).setAttribute("user", user);
         } catch (Exception e) {
             req.setAttribute("error", "ERROR:" + e.toString());
             req.getRequestDispatcher("/browse.jsp").forward(req, resp);

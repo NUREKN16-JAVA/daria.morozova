@@ -59,7 +59,7 @@ public class EditServlet extends HttpServlet {
         String idStr = req.getParameter("id");
         String firstName = req.getParameter("firstName");
         String lastName = req.getParameter("lastName");
-        String dateStr = req.getParameter("date");
+        String dateStr = req.getParameter("dateOfBirth");
         if (firstName == null) {
             throw new ValidationException("First name is empty");
         }

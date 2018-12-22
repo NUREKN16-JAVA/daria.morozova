@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=utf-8" %>
 <jsp:useBean id="user" class="ua.nure.kn.morozova.usermanagement.User" scope="session"/>
 <html>
 <head><title>User management/Details</title></head>
