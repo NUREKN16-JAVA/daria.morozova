@@ -11,7 +11,7 @@ public class ConnectionFactoryImplTest {
 
 	@Test
 	public void testConnectionCreator() {
-		ConnectionFactory conFactory = new ConnectionFactoryImpl("sa", "", "jdbc:hsqldb:file:db/usermanagement", "org.hsqldb.jdbcDriver");
+		ConnectionFactory conFactory = new ConnectionFactoryImpl("SA", "", "jdbc:hsqldb:file:D:/databases/usermanagement/usermanagement", "org.hsqldb.jdbcDriver");
 		Connection connection = null;
 		try {
 			connection = conFactory.createConnection();

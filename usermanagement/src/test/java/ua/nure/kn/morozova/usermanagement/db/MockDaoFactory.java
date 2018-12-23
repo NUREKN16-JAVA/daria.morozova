@@ -1,6 +1,5 @@
 package ua.nure.kn.morozova.usermanagement.db;
 
-import org.hsqldb.User;
 
 import com.mockobjects.dynamic.Mock;
 

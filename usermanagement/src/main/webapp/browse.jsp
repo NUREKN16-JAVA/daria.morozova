@@ -23,7 +23,7 @@
 	</table>
 	<input type="submit" name="addButton" value="Add">
 	<input type="submit" name="editButton" value="Edit">
-	<input type="submit" name="deleteButton" value="Delete">
+	<input type="submit" id="deleteButton" name="deleteButton" value="Delete">
 	<input type="submit" name="detailsButton" value="Details">
 </form>
 <c:if test="${requestScope.error != null}">
@@ -31,5 +31,19 @@
         alert('${requestScope.error}');
 	</script>
 </c:if>
+
+<script>
+    var deleteButton = document.getElementById("deleteButton");
+    deleteButton.addEventListener("click", function (e) {
+        if (!document.querySelector('input[name="id"]:checked')) {
+            e.preventDefault();
+            alert("choose a user!");
+            return;
+        }
+        if (!confirm("delete this user?")) {
+            e.preventDefault();
+        }
+    });
+</script>
 </body>
 </html>
