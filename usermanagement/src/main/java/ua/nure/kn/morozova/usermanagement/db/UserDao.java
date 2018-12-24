@@ -19,7 +19,7 @@ public interface UserDao {
 	 * @param user
 	 * @throws DatabaseException
 	 */
-	void update (User user) throws DatabaseException;
+	void update(User user) throws DatabaseException;
 	
 	
 	/**
