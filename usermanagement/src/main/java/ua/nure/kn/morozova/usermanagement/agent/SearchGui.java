@@ -87,7 +87,6 @@ public class SearchGui extends JFrame {
 
     class SearchPanel extends JPanel implements ActionListener {
 
-        //        protected JFrame parent;
         SearchAgent agent;
         private JPanel buttonPanel;
 

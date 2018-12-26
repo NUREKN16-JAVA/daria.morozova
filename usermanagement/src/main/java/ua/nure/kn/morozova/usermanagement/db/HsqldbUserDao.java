@@ -193,8 +193,8 @@ class HsqldbUserDao implements UserDao {
 	public Collection find(String firstName, String lastName) throws DatabaseException {
 		Collection<User> users = new LinkedList<>();
 
-		try (Connection connection = connectionFactory.createConnection();
-			 PreparedStatement statement = connection.prepareStatement(SELECT_BY_NAME)) {
+		try {Connection connection = connectionFactory.createConnection();
+			PreparedStatement statement = connection.prepareStatement(SELECT_BY_NAME);
 			statement.setString(1, firstName);
 			statement.setString(2, lastName);
 
@@ -210,6 +210,9 @@ class HsqldbUserDao implements UserDao {
 				users.add(user);
 			}
 
+			resultSet.close();
+			statement.close();
+			connection.close();
 		} catch (SQLException e) {
 			throw new DatabaseException("Database has some errors", e);
 		}

@@ -24,30 +24,16 @@ public class RequestServer extends CyclicBehaviour {
         }
     }
 
-    private Collection<User> parseMessage(ACLMessage message) {
-        Collection<User> users = new LinkedList<>();
-        String content = message.getContent();
-        if (content != null) {
-            StringTokenizer tokenizer1 = new StringTokenizer(content, ";");
-            while (tokenizer1.hasMoreTokens()) {
-                String userInfo = tokenizer1.nextToken();
-                StringTokenizer tokenizer2 = new StringTokenizer(userInfo, ",");
-                String id = tokenizer2.nextToken();
-                String firstName = tokenizer2.nextToken();
-                String lastName = tokenizer2.nextToken();
-                users.add(new User(new Long(id), firstName, lastName, null));
-
-            }
-        }
-        return users;
-    }
     private ACLMessage createReply(ACLMessage message) {
         ACLMessage reply = message.createReply();
+        reply.setPerformative(ACLMessage.INFORM);
         String content = message.getContent();
         StringTokenizer tokenizer = new StringTokenizer(content, ",");
         if (tokenizer.countTokens() == 2) {
             String firstName = tokenizer.nextToken();
             String lastName = tokenizer.nextToken();
+            System.out.println("REPLY first name: " + firstName);
+            System.out.println("REPLY last name: " + lastName);
             Collection<User> users = null;
             try {
                 users = DaoFactory.getInstance().getUserDao().find(firstName, lastName);
@@ -67,5 +53,27 @@ public class RequestServer extends CyclicBehaviour {
         }
 
         return reply;
+    }
+
+    private Collection<User> parseMessage(ACLMessage message) {
+
+        Collection<User> users = new LinkedList<>();
+        String content = message.getContent();
+
+        if (content != null) {
+            StringTokenizer tokenizer1 = new StringTokenizer(content, ";");
+            while (tokenizer1.hasMoreTokens()) {
+                String userInfo = tokenizer1.nextToken();
+                StringTokenizer tokenizer2 = new StringTokenizer(userInfo, ",");
+                String id = tokenizer2.nextToken();
+                String firstName = tokenizer2.nextToken();
+                String lastName = tokenizer2.nextToken();
+                System.out.println("PARSE id: " + id);
+                System.out.println("PARSE first name: " + firstName);
+                System.out.println("PARSE last name: " + lastName);
+                users.add(new User(new Long(id), firstName, lastName, null));
+            }
+        }
+        return users;
     }
 }

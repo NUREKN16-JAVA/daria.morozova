@@ -45,8 +45,6 @@ public class SearchAgent extends Agent {
         }
 
 
-        addBehaviour(new RequestServer());
-
         addBehaviour(new TickerBehaviour(this, 10000) {
 
 
@@ -58,23 +56,24 @@ public class SearchAgent extends Agent {
                 serviceDescription.setType("searching");
                 agentDescription.addServices(serviceDescription);
 
-                AID myID = getAID();
+                    AID thisId = getAID();
 
                 try {
                     DFAgentDescription[] descriptions =
                             DFService.search(myAgent, agentDescription);
                     aids = new AID[descriptions.length - 1];
 
+                    System.out.println("AGENTS: " + descriptions.length);
 
-                    List<AID> aidList = new LinkedList<>();
+                    List<AID> AllAids = new LinkedList<>();
 
                     for (int i = 0; i < descriptions.length; i++) {
                         DFAgentDescription description = descriptions[i];
-                        if( !description.getName().equals(myID)) {
-                            aidList.add(description.getName());
+                        if( !description.getName().equals(thisId)) {
+                            AllAids.add(description.getName());
                         }
                     }
-                    aids = aidList.toArray(new AID[0]);
+                    aids = AllAids.toArray(new AID[0]);
 
 
 
